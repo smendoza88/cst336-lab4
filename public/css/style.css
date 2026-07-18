@@ -2,3 +2,12 @@ body {
     background-color: #CBe2F6;
     text-align: center;
 }
+nav a{
+    text-decoration: none;
+    padding: 10px;
+
+}
+.home-img {
+    max-width: 500px;
+    height: auto;
+}

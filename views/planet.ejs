@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <title>Solar System</title>
-</head>
+<%- include('partials/head.ejs') %>
 
-<body>
-    <h1>The Solar System</h1>
+<body class="d-flex flex-column vh-100">
     <%- include('partials/nav.ejs') %>
-    <h2>Planet <%= planetName %></h2>
-    <p>Desc: <%= planetInfo.description %></p>
-    <p>Radius: <%= planetInfo.radius %></p>
-    <p>Distance from Sun: <%= planetInfo.distanceFromSun %></p>
+    <h1 class="mt-2">The Solar System</h1>
+    <div class="container text-start mt-5">
+        <h2 class="mb-3 text-center">Planet <%= planetName %></h2>
+        <p><b>Description:</b> <%= planetInfo.description %></p>
+        <p><b>Radius:</b> <%= planetInfo.radius %></p>
+        <p><b>Distance from Sun:</b> <%= planetInfo.distanceFromSun %></p>
+    </div>
     <img src="<%= planetInfo.image %>">
+    <%- include('partials/footer.ejs') %>
 </body>
 
 </html>

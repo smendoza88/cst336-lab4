@@ -33,6 +33,15 @@ app.get("/planet", (req, res) =>{
    res.render('planet', {planetInfo, planetName});
 })
 
+app.get("/nasa", async (req, res) =>{
+  let todayDate = new Date().toLocaleDateString('en-CA');
+  console.log(todayDate);
+  let pdoURL = `https://api.nasa.gov/planetary/apod?api_key=9mUzIkhlZCZaOoMfspg7jMmwZCZ4LiRHtkgkambD&date=${todayDate}`
+  let picOfTheDay = await fetch(pdoURL);
+  let pod = await picOfTheDay.json();
+  res.render('nasa', {pod});
+})
+
 app.listen(3000, () => {
   console.log("server started");
 });
